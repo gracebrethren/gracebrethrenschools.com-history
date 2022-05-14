@@ -15,6 +15,7 @@ jobs:
     - name: Fetch latest data
       run: |-
         curl https://www.gracebrethrenschools.com > index.html
+        curl https://www.gracebrethrenschools.com/academics/jrsr-high > academics/jrsr-high.html
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
