@@ -14,9 +14,9 @@ jobs:
       uses: actions/checkout@v2
     - name: Fetch latest data
       run: |-
-        curl https://www.gracebrethrenschools.com | awk '!/CF\$cv\$params/' | awk '!/cdn\-cgi\/challenge\-platform/' > index.html
+        curl https://www.gracebrethrenschools.com | awk '!/CF\$cv\$params/' | awk '!/cdn\-cgi\//' > index.html
         mkdir -p academics
-        curl https://www.gracebrethrenschools.com/academics/jrsr-high | awk '!/CF\$cv\$params/' | awk '!/cdn\-cgi\/challenge\-platform/' > academics/jrsr-high.html
+        curl https://www.gracebrethrenschools.com/academics/jrsr-high | awk '!/CF\$cv\$params/' | awk '!/cdn\-cgi\//' > academics/jrsr-high.html
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
